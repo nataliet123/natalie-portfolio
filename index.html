@@ -316,6 +316,23 @@
       transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
+    .card-link{
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+
+    .card-link:hover .project-card{
+      transform:translateY(-8px);
+      box-shadow:0 25px 60px rgba(74,26,65,0.2);
+      cursor:pointer;
+    }
+
+    .card-link:hover h3{
+      color:var(--berry);
+    }
+
+
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 22px 55px rgba(74, 26, 65, 0.17);
@@ -595,21 +612,45 @@
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-type">Accounts payable automation</div>
-            <h3>Allocation Automation</h3>
-            <p>Designed and developed an end-to-end automation solution for repetitive allocation activities.</p>
-            <ul>
-              <li>Applied Python, Selenium and data transformation tools.</li>
-              <li>Worked with AP stakeholders to validate requirements and allocation logic.</li>
-              <li>Reduced manual allocation effort by 220 hours per year.</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Selenium</span>
-              <span class="tag">Data Transformation</span>
-            </div>
-          </article>
+          <a href="allocation-automation.html" class="card-link">
+
+            <article class="card project-card">
+          
+              <div class="project-type">
+                Accounts payable automation
+              </div>
+          
+              <h3>Allocation Automation</h3>
+          
+              <p>
+                Designed and developed an end-to-end automation solution
+                for repetitive allocation activities.
+              </p>
+          
+              <ul>
+                <li>
+                  Applied Python, Selenium and data transformation tools.
+                </li>
+          
+                <li>
+                  Worked with AP stakeholders to validate requirements
+                  and allocation logic.
+                </li>
+          
+                <li>
+                  Reduced manual allocation effort by 220 hours per year.
+                </li>
+              </ul>
+          
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Selenium</span>
+                <span class="tag">Data Transformation</span>
+              </div>
+          
+            </article>
+          
+          </a>
 
           <article class="card project-card">
             <div class="project-type">Lean process improvement</div>
