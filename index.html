@@ -1,1 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Natalie Tan Li Yi, a project management analyst focused on process improvement, automation, AI and digital transformation.">
+  <title>Natalie Tan Li Yi | Project Analyst Portfolio</title>
+  <style>
+    :root {
+      --mulberry: #6f1d5f;
+      --mulberry-dark: #35112f;
+      --berry: #a23a83;
+      --rose: #f7eaf3;
+      --gold: #f4c95d;
+      --ink: #25212a;
+      --muted: #6b6470;
+      --paper: #ffffff;
+      --background: #fbf8fb;
+      --line: #eadde8;
+      --shadow: 0 18px 50px rgba(74, 26, 65, 0.12);
+      --radius: 22px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--mulberry);
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--berry);
+    }
+
+    .hero-wrap {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(244, 201, 93, 0.22), transparent 24%),
+        radial-gradient(circle at 15% 90%, rgba(226, 134, 190, 0.18), transparent 26%),
+        linear-gradient(135deg, var(--mulberry-dark), var(--mulberry) 58%, #8b2b75);
+      color: white;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      align-items: center;
+      gap: 64px;
+      padding: 88px 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      max-width: 790px;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-summary {
+      max-width: 760px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 21px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      font-weight: 850;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: white;
+      color: var(--mulberry);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    .button-outline {
+      border-color: rgba(255, 255, 255, 0.54);
+      color: white;
+    }
+
+    .button-dark {
+      background: var(--mulberry);
+      color: white;
+    }
+
+    .initials {
+      width: 270px;
+      aspect-ratio: 1;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0.06));
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-radius: 38% 62% 58% 42% / 45% 40% 60% 55%;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+      font-size: 4.8rem;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .eyebrow {
+      color: var(--berry);
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-header h2 {
+      margin-top: 9px;
+      color: var(--mulberry);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.13;
+      letter-spacing: -0.035em;
+    }
+
+    .section-header p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .summary-grid,
+    .impact-grid,
+    .project-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .summary-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card {
+      padding: 32px;
+    }
+
+    .summary-card h3,
+    .project-card h3,
+    .impact-card h3 {
+      color: var(--mulberry);
+    }
+
+    .summary-card p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .skill {
+      padding: 8px 13px;
+      background: var(--rose);
+      border: 1px solid #e8cfe1;
+      border-radius: 999px;
+      color: var(--mulberry);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .impact-band {
+      background: var(--rose);
+    }
+
+    .impact-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .impact-card {
+      padding: 30px;
+    }
+
+    .impact-number {
+      color: var(--berry);
+      font-size: 2.2rem;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .impact-card h3 {
+      margin: 5px 0 9px;
+    }
+
+    .impact-card p {
+      color: var(--muted);
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 55px rgba(74, 26, 65, 0.17);
+    }
+
+    .project-type {
+      color: var(--berry);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin: 9px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    .project-card p,
+    .project-card li {
+      color: var(--muted);
+    }
+
+    .project-card ul {
+      margin: 16px 0 0 19px;
+    }
+
+    .project-card li + li {
+      margin-top: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 22px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      background: #f7f3f7;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--mulberry);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .credential {
+      padding: 28px;
+    }
+
+    .credential h3 {
+      color: var(--mulberry);
+    }
+
+    .credential p {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .contact-panel {
+      padding: 56px 30px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(244, 201, 93, 0.2), transparent 24%),
+        linear-gradient(135deg, var(--mulberry-dark), var(--mulberry));
+      border-radius: 28px;
+      color: white;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .contact-panel p {
+      max-width: 680px;
+      margin: 13px auto 27px;
+      color: rgba(255, 255, 255, 0.83);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: #250920;
+      color: rgba(255, 255, 255, 0.72);
+      text-align: center;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        text-align: center;
+      }
+
+      .hero-summary {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .initials {
+        width: 220px;
+      }
+
+      .impact-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .credential-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">NATALIE TAN</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-wrap" id="home">
+      <div class="hero container">
+        <div>
+          <div class="pill">Project Management • Process Improvement • Automation</div>
+          <h1>Turning complex processes into <span>scalable digital solutions.</span></h1>
+          <p class="hero-summary">
+            I am Natalie Tan Li Yi, a project management analyst with a Computer Science background. I combine process analysis, Lean thinking and hands-on technology delivery to improve workflows, reduce manual effort and support digital transformation.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work</a>
+            <a class="button button-outline" href="Natalie Tan Li Yi 2026 Resume.pdf" target="_blank" rel="noopener">View résumé</a>
+          </div>
+        </div>
+        <div class="initials" aria-label="Natalie Tan initials">NT</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">About me</div>
+          <h2>Business analysis supported by hands-on technical delivery</h2>
+          <p>I work across stakeholders, processes and technology to move improvement ideas from analysis through implementation and adoption.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="card summary-card">
+            <h3>Professional profile</h3>
+            <p>
+              My experience includes mapping current- and future-state processes, facilitating stakeholder discussions, identifying waste and building automation using Python, Selenium, Power Platform and AI technologies. I focus on practical solutions that can be governed, tested and scaled.
+            </p>
+          </article>
+
+          <article class="card summary-card">
+            <h3>Core competencies</h3>
+            <div class="skills">
+              <span class="skill">Project Management</span>
+              <span class="skill">Digital Transformation</span>
+              <span class="skill">Process Improvement</span>
+              <span class="skill">AI Agents</span>
+              <span class="skill">Python</span>
+              <span class="skill">Selenium</span>
+              <span class="skill">Power Platform</span>
+              <span class="skill">VBA</span>
+              <span class="skill">Stakeholder Management</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-band" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Selected impact</div>
+          <h2 id="impact-title">From process analysis to measurable outcomes</h2>
+        </div>
+
+        <div class="impact-grid">
+          <article class="card impact-card">
+            <div class="impact-number">300+</div>
+            <h3>Hours saved annually</h3>
+            <p>Combined manual-effort reduction highlighted across automation work in the résumé.</p>
+          </article>
+
+          <article class="card impact-card">
+            <div class="impact-number">220</div>
+            <h3>Hours reduced</h3>
+            <p>Annual manual allocation effort reduced through an end-to-end automation solution.</p>
+          </article>
+
+          <article class="card impact-card">
+            <div class="impact-number">Award</div>
+            <h3>Most Scalable Solution</h3>
+            <p>Recognition received for the T&amp;E AI Audit Chatbot developed during a Lean Hackathon.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Portfolio</div>
+          <h2>Selected projects</h2>
+          <p>High-level project summaries are shown without confidential files, internal screenshots or restricted company information.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="project-type">AI and audit enablement</div>
+            <h3>T&amp;E AI Audit Chatbot</h3>
+            <p>Co-developed an AI-powered assistant to support Travel &amp; Expense audit review activities.</p>
+            <ul>
+              <li>Designed capabilities covering receipts, supporting documents, policies and exception scenarios.</li>
+              <li>Collaborated with a cross-functional team on a scalable enterprise finance use case.</li>
+              <li>Received the Most Scalable Solution Award.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Copilot Studio</span>
+              <span class="tag">Generative AI</span>
+              <span class="tag">Audit Process</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-type">Accounts payable automation</div>
+            <h3>Allocation Automation</h3>
+            <p>Designed and developed an end-to-end automation solution for repetitive allocation activities.</p>
+            <ul>
+              <li>Applied Python, Selenium and data transformation tools.</li>
+              <li>Worked with AP stakeholders to validate requirements and allocation logic.</li>
+              <li>Reduced manual allocation effort by 220 hours per year.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Selenium</span>
+              <span class="tag">Data Transformation</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-type">Lean process improvement</div>
+            <h3>Email Automation</h3>
+            <p>Designed a SharePoint-based workflow to remove manual steps from a document-processing process.</p>
+            <ul>
+              <li>Mapped the current state and identified excess processing and waiting.</li>
+              <li>Automated ZIP-file extraction and downstream notifications.</li>
+              <li>Reduced manual handling by approximately 60 hours annually.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">SharePoint</span>
+              <span class="tag">Workflow Automation</span>
+              <span class="tag">Lean</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-type">P2P transformation</div>
+            <h3>Digital Champion Co-Lead</h3>
+            <p>Co-led governance and continuous-improvement activities across Procure-to-Pay operations.</p>
+            <ul>
+              <li>Evaluated automation opportunities, digital solutions and AI use cases.</li>
+              <li>Aligned initiatives across AP, Procurement, Finance and IT stakeholders.</li>
+              <li>Supported projects from ideation through implementation.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Governance</span>
+              <span class="tag">P2P</span>
+              <span class="tag">Stakeholder Management</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-type">Data-driven optimisation</div>
+            <h3>Vendor Portal Optimisation</h3>
+            <p>Analysed onboarding trends, adoption metrics and AP operational data to identify improvement opportunities.</p>
+            <ul>
+              <li>Used Excel, Pivot Tables, AI-assisted analysis and SAP extracts.</li>
+              <li>Identified process bottlenecks affecting vendor self-service adoption.</li>
+              <li>Developed recommendations to improve onboarding efficiency.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Excel</span>
+              <span class="tag">SAP Data</span>
+              <span class="tag">Process Analysis</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-type">AI education and sustainability</div>
+            <h3>Sustainability AI Education Initiative</h3>
+            <p>Led the creation of an AI-powered animated educational solution supporting a youth health programme.</p>
+            <ul>
+              <li>Created a reusable digital learning asset with an AI-generated character.</li>
+              <li>Designed educational content covering healthy lifestyle topics.</li>
+              <li>Established a reusable content model for broader programme deployment.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">AI Content</span>
+              <span class="tag">Digital Learning</span>
+              <span class="tag">Sustainability</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Credentials</div>
+          <h2>Education and certification</h2>
+        </div>
+
+        <div class="credential-grid">
+          <article class="card credential">
+            <h3>Bachelor of Computer Science (Hons)</h3>
+            <p>Multimedia University</p>
+          </article>
+          <article class="card credential">
+            <h3>Lean White Belt</h3>
+            <p>AstraZeneca, 2026</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <h2>Let us connect</h2>
+          <p>I am interested in project analysis, process improvement, digital transformation, automation and AI enablement opportunities.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:natalietanliyi@outlook.com">Email me</a>
+            <a class="button button-outline" href="https://www.linkedin.com/in/natalie-tan-ly" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button button-outline" href="Natalie Tan Li Yi 2026 Resume.pdf" download>Download résumé</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Natalie Tan Li Yi. Personal portfolio.</p>
+  </footer>
+</body>
+</html>
