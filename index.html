@@ -306,21 +306,21 @@
     }
 
     .project-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
 
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      padding: 30px;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
+  .card-link {
+    display: flex;
+  }
 
-    .card-link{
-      text-decoration:none;
-      color:inherit;
-      display:block;
-    }
+  .project-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
     .card-link:hover .project-card{
       transform:translateY(-8px);
